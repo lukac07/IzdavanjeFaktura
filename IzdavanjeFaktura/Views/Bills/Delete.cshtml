@@ -1,0 +1,73 @@
+﻿@model IzdavanjeFaktura.Models.Bill
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Obriši</h2>
+
+<h3>Želite obrisati ovaj račun?</h3>
+<div>
+    <!--<h4>Bill</h4>-->
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Bill_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bill_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bill_Created_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bill_Created_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bill_Due_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bill_Due_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price_Item_NonTax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price_Item_NonTax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price_NonTax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price_NonTax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price_Final)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price_Final)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obriši" class="btn btn-default" /> |
+            @Html.ActionLink("Svi računi", "Index")
+        </div>
+    }
+</div>

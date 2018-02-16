@@ -1,0 +1,66 @@
+﻿@model IzdavanjeFaktura.Models.Bill
+
+@{
+    ViewBag.Title = "Detalji";
+}
+
+<h2>Detalji</h2>
+
+<div>
+    <!--<h4>Bill</h4>-->
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Bill_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bill_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bill_Created_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bill_Created_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bill_Due_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bill_Due_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price_Item_NonTax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price_Item_NonTax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price_NonTax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price_NonTax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price_Final)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price_Final)
+        </dd>
+
+    </dl>
+</div>
+    <p>
+        @Html.ActionLink("Promijeni", "Edit", new { id = Model.BillID }) |
+        @Html.ActionLink("Svi računi", "Index")
+    </p>

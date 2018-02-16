@@ -1,0 +1,66 @@
+﻿@model IEnumerable<IzdavanjeFaktura.ViewModels.BillViewModel>
+
+@{
+    ViewBag.Title = "Svi računi";
+}
+
+<h2>Svi računi</h2>
+
+<p>
+    @Html.ActionLink("Kreiraj novi račun", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Bill_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bill_Created_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bill_Due_Date)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Price_Item_NonTax)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Price_NonTax)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Price_Final)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bill_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bill_Created_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bill_Due_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price_Item_NonTax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price_NonTax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price_Final)
+        </td>
+        <td>
+            @Html.ActionLink("Promijeni", "Edit", new { id = item.BillID }) |
+            @Html.ActionLink("Detalji", "Details", new { id = item.BillID }) |
+            @Html.ActionLink("Obriši", "Delete", new { id = item.BillID })
+        </td>
+    </tr>
+}
+
+</table>
